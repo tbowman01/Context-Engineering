@@ -1,0 +1,268 @@
+# Context Engineering - .gitignore
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# ============================================================================
+# Jupyter Notebook
+# ============================================================================
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.ipynb_checkpoints/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# ============================================================================
+# Environments
+# ============================================================================
+.env
+.env.local
+.env.*.local
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# virtualenv
+pip-selfcheck.json
+
+# ============================================================================
+# IDEs & Editors
+# ============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ============================================================================
+# Operating Systems
+# ============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# Project Specific
+# ============================================================================
+# API Keys and Secrets (CRITICAL - DON'T COMMIT THESE!)
+*_api_key*
+*_secret*
+*_token*
+credentials.json
+secrets.yaml
+config.local.*
+.api_keys
+api_keys.txt
+
+# Data files (can be large)
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+data/raw/
+data/processed/
+data/cache/
+data/downloads/
+*.parquet
+*.feather
+
+# Model checkpoints and weights
+models/checkpoints/
+models/weights/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Vector databases
+chroma_db/
+faiss_index/
+*.index
+*.faiss
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Output directories
+outputs/
+results/
+experiments/
+runs/
+
+# Cache directories
+.cache/
+__cache__/
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================================================
+# Documentation
+# ============================================================================
+docs/_build/
+docs/_static/
+docs/_templates/
+site/
+.doctrees/
+
+# ============================================================================
+# Testing
+# ============================================================================
+.tox/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ============================================================================
+# Package managers
+# ============================================================================
+# Poetry
+poetry.lock
+
+# Pipenv
+Pipfile.lock
+
+# pdm
+.pdm.toml
+__pypackages__/
+
+# ============================================================================
+# Build tools
+# ============================================================================
+*.c
+*.cpp
+*.so
+*.dylib
+*.dll
+
+# ============================================================================
+# Database
+# ============================================================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================================================
+# Misc
+# ============================================================================
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Ignore large binary files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Profiling data
+*.prof
+*.lprof
+
+# Benchmarking results
+benchmark_results/
