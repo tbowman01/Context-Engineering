@@ -1,0 +1,84 @@
+{
+  "procedures": [
+    {
+      "name": "debug_python_code",
+      "description": "Step-by-step debugging process for Python",
+      "steps": [
+        "Read the error message carefully",
+        "Check the line number in the traceback",
+        "Add print statements to verify variable values",
+        "Use pdb debugger for step-through debugging",
+        "Verify assumptions about data types and values",
+        "Fix the identified issue",
+        "Re-run and verify the fix",
+        "Add tests to prevent regression"
+      ],
+      "importance": 0.8
+    },
+    {
+      "name": "create_python_function",
+      "description": "How to create a well-documented Python function",
+      "steps": [
+        "Use the 'def' keyword",
+        "Provide a descriptive function name (snake_case)",
+        "Define parameters with type hints",
+        "Add a comprehensive docstring",
+        "Write the function body with clear logic",
+        "Add a return statement if needed",
+        "Include error handling where appropriate",
+        "Write unit tests for the function"
+      ],
+      "importance": 0.9
+    },
+    {
+      "name": "setup_python_project",
+      "description": "Setting up a new Python project",
+      "steps": [
+        "Create project directory",
+        "Initialize git repository",
+        "Create virtual environment (python -m venv venv)",
+        "Activate virtual environment",
+        "Create requirements.txt",
+        "Set up project structure (src/, tests/, docs/)",
+        "Add .gitignore file",
+        "Write README.md",
+        "Set up pre-commit hooks (optional)",
+        "Initialize testing framework (pytest)"
+      ],
+      "importance": 0.7
+    },
+    {
+      "name": "learn_new_topic",
+      "description": "Effective approach to learning a new programming topic",
+      "steps": [
+        "Start with official documentation",
+        "Watch introductory video tutorials",
+        "Read beginner-friendly articles",
+        "Follow a structured course or book",
+        "Build small practice projects",
+        "Read others' code examples",
+        "Ask questions in communities",
+        "Teach what you've learned to others",
+        "Build a real project applying the concepts"
+      ],
+      "importance": 0.8
+    },
+    {
+      "name": "git_workflow",
+      "description": "Standard Git workflow for development",
+      "steps": [
+        "Create or checkout a feature branch",
+        "Make your code changes",
+        "Stage changes (git add)",
+        "Commit with descriptive message",
+        "Pull latest changes from main/master",
+        "Resolve any conflicts",
+        "Push your branch to remote",
+        "Create pull request",
+        "Address review feedback",
+        "Merge when approved"
+      ],
+      "importance": 0.7
+    }
+  ]
+}

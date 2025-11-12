@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "chatbot_name": "Claude",
+    "session_start": "2025-11-12T13:58:59.336934",
+    "session_duration_seconds": 0.0009403228759765625,
+    "message_count": 10,
+    "saved_at": "2025-11-12T13:58:59.337875"
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello! What's your name?",
+      "timestamp": 1762955939.3370087,
+      "importance": 1.0
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I'm Claude. How can I assist you today?",
+      "timestamp": 1762955939.3370316,
+      "importance": 1.0
+    },
+    {
+      "role": "user",
+      "content": "My name is Alex",
+      "timestamp": 1762955939.3370821,
+      "importance": 0.8
+    },
+    {
+      "role": "assistant",
+      "content": "I understand. Could you tell me more about that?",
+      "timestamp": 1762955939.3371038,
+      "importance": 0.8
+    },
+    {
+      "role": "user",
+      "content": "I'm learning Python programming",
+      "timestamp": 1762955939.3371637,
+      "importance": 0.8
+    },
+    {
+      "role": "assistant",
+      "content": "That's wonderful! I can help you learn. What specific topics would you like to explore?",
+      "timestamp": 1762955939.3371823,
+      "importance": 0.8
+    },
+    {
+      "role": "user",
+      "content": "Can you help me with decorators?",
+      "timestamp": 1762955939.3372498,
+      "importance": 1.0
+    },
+    {
+      "role": "assistant",
+      "content": "I understand. Could you tell me more about that?",
+      "timestamp": 1762955939.3372602,
+      "importance": 1.0
+    },
+    {
+      "role": "user",
+      "content": "What's my name?",
+      "timestamp": 1762955939.3373473,
+      "importance": 1.0
+    },
+    {
+      "role": "assistant",
+      "content": "Your name is Alex!",
+      "timestamp": 1762955939.3373606,
+      "importance": 1.0
+    }
+  ],
+  "user_profile": {
+    "name": "Alex"
+  },
+  "memory": {
+    "working": [
+      {
+        "content": "I understand. Could you tell me more about that?",
+        "importance": 0.8
+      },
+      {
+        "content": "I'm learning Python programming",
+        "importance": 0.8
+      },
+      {
+        "content": "That's wonderful! I can help you learn. What specific topics would you like to explore?",
+        "importance": 0.8
+      },
+      {
+        "content": "Can you help me with decorators?",
+        "importance": 1.0
+      },
+      {
+        "content": "I understand. Could you tell me more about that?",
+        "importance": 1.0
+      },
+      {
+        "content": "What's my name?",
+        "importance": 1.0
+      },
+      {
+        "content": "Your name is Alex!",
+        "importance": 1.0
+      }
+    ],
+    "episodic_count": 14,
+    "semantic_categories": [
+      "bot_personality",
+      "user_info",
+      "user_interests",
+      "python"
+    ],
+    "procedures": [
+      "greeting",
+      "create_decorator"
+    ]
+  }
+}
