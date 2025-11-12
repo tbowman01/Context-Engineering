@@ -1,0 +1,148 @@
+# Configuration for Simple RAG Assistant
+# =======================================
+
+# Vector Store Settings
+vector_store:
+  type: "simple"  # Options: simple, chroma, faiss
+  embedding_model: "all-MiniLM-L6-v2"  # For production use
+  similarity_threshold: 0.0  # Minimum similarity score (0-1)
+  persist_directory: "outputs/vector_store"  # Where to save vector store
+
+# Document Loading
+document_loader:
+  chunk_size: 500  # Characters per chunk
+  chunk_overlap: 50  # Overlap between chunks
+  clean_whitespace: true  # Remove extra whitespace
+  supported_formats:
+    - txt
+    - md
+    - json
+    - pdf  # Requires PyPDF2
+    - docx  # Requires python-docx
+
+# Context Assembly
+context_assembly:
+  max_tokens: 2000  # Maximum context window tokens
+  reserve_tokens_for_response: 500  # Reserve for LLM response
+  strategy: "weighted"  # Options: linear, weighted, hierarchical, sliding
+
+  # Weighted strategy weights
+  weighted_strategy:
+    relevance_weight: 0.4  # Document relevance score
+    efficiency_weight: 0.3  # Token efficiency
+    recency_weight: 0.3    # Recency (if applicable)
+
+  # Hierarchical strategy thresholds
+  hierarchical_strategy:
+    high_priority_threshold: 0.7   # Score > 0.7
+    medium_priority_threshold: 0.4  # Score 0.4-0.7
+    # Low priority: < 0.4
+
+# Retrieval Settings
+retrieval:
+  top_k: 5  # Number of documents to retrieve
+  rerank: false  # Re-rank results (requires reranker model)
+  filter_by_metadata: false  # Enable metadata filtering
+
+# LLM Settings
+llm:
+  provider: "openai"  # Options: openai, anthropic, local
+  model: "gpt-3.5-turbo"  # Model name
+  temperature: 0.7  # Response creativity (0-1)
+  max_tokens: 500  # Maximum response tokens
+
+  # OpenAI specific
+  openai:
+    api_key_env: "OPENAI_API_KEY"  # Environment variable name
+    organization: null
+
+  # Anthropic specific
+  anthropic:
+    api_key_env: "ANTHROPIC_API_KEY"
+    model: "claude-3-sonnet-20240229"
+
+  # Local model (Ollama, llama.cpp, etc.)
+  local:
+    base_url: "http://localhost:11434"
+    model: "llama2"
+
+# Performance Monitoring
+performance:
+  enable_monitoring: true
+  log_queries: true
+  log_file: "outputs/query_log.json"
+  track_metrics:
+    - retrieval_time
+    - assembly_time
+    - generation_time
+    - total_time
+    - token_usage
+    - relevance_scores
+
+  # Alerting thresholds
+  alert_thresholds:
+    max_query_time_ms: 5000
+    max_context_tokens: 2500
+    min_relevance_score: 0.3
+
+# Memory Management
+memory:
+  enable_conversation_memory: false
+  max_conversation_length: 10  # Number of turns to keep
+  memory_type: "buffer"  # Options: buffer, summary, sliding_window
+
+  # Hierarchical memory (if enabled)
+  hierarchical:
+    working_memory_size: 7
+    episodic_memory_size: 100
+    enable_semantic_memory: true
+    enable_procedural_memory: false
+
+# Caching
+caching:
+  enable_cache: false
+  cache_type: "memory"  # Options: memory, redis, disk
+  cache_ttl_seconds: 3600  # Time to live for cached items
+
+  # What to cache
+  cache_embeddings: true
+  cache_retrievals: true
+  cache_llm_responses: false  # Usually false for freshness
+
+# Output Settings
+output:
+  format: "text"  # Options: text, json, markdown
+  include_sources: true
+  include_metadata: true
+  include_performance_metrics: false
+  save_responses: false
+  output_directory: "outputs/responses"
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_to_file: true
+  log_file: "outputs/rag_assistant.log"
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Development/Debug Settings
+debug:
+  verbose: false
+  print_context: false  # Print assembled context
+  print_prompts: false  # Print LLM prompts
+  save_debug_info: false
+  debug_output_dir: "outputs/debug"
+
+# Data Paths
+paths:
+  data_dir: "data"
+  output_dir: "outputs"
+  cache_dir: "outputs/cache"
+  models_dir: "models"  # For local models
+
+# Experimental Features
+experimental:
+  enable_query_expansion: false  # Expand queries with synonyms
+  enable_answer_validation: false  # Validate answer quality
+  enable_multi_query: false  # Generate multiple query variants
+  enable_fusion: false  # Fusion of multiple retrieval strategies
